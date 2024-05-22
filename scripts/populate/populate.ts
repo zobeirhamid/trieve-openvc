@@ -135,6 +135,5 @@ if (import.meta.main) {
             },
             body: JSON.stringify(chunks.slice(offset, offset + BULK_SIZE)),
         });
-        console.log(await response.json())
     }
 }
