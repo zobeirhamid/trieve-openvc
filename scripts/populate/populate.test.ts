@@ -1,10 +1,10 @@
 import { expect, test } from "bun:test";
-import { extractVCLinks, extractVC, scrapeTrieveChunks } from "./scrape";
-import { TrieveChunkSchema, VentureCapitalistSchema } from "../schemas";
+import { extractVCLinks, extractVC, scrapeTrieveChunks } from "./populate";
+import { TrieveChunkSchema, VentureCapitalistSchema } from "@trieve-opencv/schemas";
 //@ts-expect-error
-import openvc from "../stubs/openvc.html" with { type: "text" };
+import openvc from "./stubs/openvc.html" with { type: "text" };
 //@ts-expect-error
-import brickyard from "../stubs/brickyard.html" with { type: "text" };
+import brickyard from "./stubs/brickyard.html" with { type: "text" };
 
 test("extractVCLinks", () => {
     const links = extractVCLinks(openvc)

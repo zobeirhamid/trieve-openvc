@@ -14,7 +14,8 @@ export const VentureCapitalistSchema = z.object({
 })
 
 export const TrieveChunkSchema = z.object({
-    chunkHTML: z.string(),
+    chunk_html: z.string(),
     link: z.string(),
+    tag_set: z.array(z.string()),
     metadata: z.record(z.union([z.string(), z.array(z.string())]))
 })

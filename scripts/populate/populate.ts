@@ -1,17 +1,16 @@
-import { load, type CheerioAPI } from 'cheerio'
+import { load } from 'cheerio'
 import path from 'path'
-import type { TrieveChunk, VentureCapitalist } from '../types'
 import { sleep } from 'bun'
-import { VentureCapitalistSchema } from '../schemas'
+import { VentureCapitalistSchema, type TrieveChunk, type VentureCapitalist  } from "@trieve-opencv/schemas"
 
 const headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36' }
 
-async function fetchOpenVCHTML() {
+export async function fetchOpenVCHTML() {
     const response = await fetch('https://www.openvc.app/search', { headers })
     return await response.text()
 }
 
-async function fetchOpenVCDetailHTML(link: string, retry = 5) {
+export async function fetchOpenVCDetailHTML(link: string, retry = 5) {
     const response = await fetch(link, { headers })
     const html = await response.text()
     if (html.includes('<title>Just a moment...</title>')) {
@@ -95,8 +94,47 @@ export async function scrapeTrieveChunks(links: string[]) {
         const html = await fetchOpenVCDetailHTML(link)
         if (html) {
             const vc = extractVC(html)
-            if(VentureCapitalistSchema.safeParse(vc).success) chunks.push({ link, chunkHTML: html, metadata: vc})
+            if(VentureCapitalistSchema.safeParse(vc).success) {
+                let chunkHTML = ''
+                if (vc.name) chunkHTML += `<h1>${vc.name}</h1>`
+                if (vc.description) chunkHTML += `<p>${vc.description}</p>`
+                if (vc.address) chunkHTML += `<p>Located in ${vc.address}</p>`
+                if (vc.check) chunkHTML += `<p>Invests ${vc.check}</p>`
+                if (vc.countries) chunkHTML += `<p>Invest in ${vc.countries.join(', ')}</p>`
+                chunkHTML = `<div>${chunkHTML}</div>`
+                const tagSet: string[] = []
+                if (vc.stages) tagSet.push(...vc.stages)
+                if (vc.countries) tagSet.push(...vc.countries)
+                chunks.push({ 
+                    link, 
+                    chunk_html: chunkHTML, 
+                    tag_set: tagSet,
+                    metadata: vc
+                })
+            }
         } else console.log('Failed:', link)
     }
     return chunks
+}
+
+
+if (import.meta.main) {
+    const MAX_CHUNKS = 1000
+    const BULK_SIZE = 120
+
+    const links = extractVCLinks(await fetchOpenVCHTML()).slice(0, MAX_CHUNKS)
+    const chunks = await scrapeTrieveChunks(links)
+    for (let offset = 0; offset < chunks.length; offset += BULK_SIZE) {
+        const response = await fetch("https://api.trieve.ai/api/chunk", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "TR-Organization": process.env.TRIEVE_ORGANIZATION_ID!,
+                "TR-Dataset": process.env.TRIEVE_DATASET_ID!,
+                Authorization: process.env.TRIEVE_API_KEY!,
+            },
+            body: JSON.stringify(chunks.slice(offset, offset + BULK_SIZE)),
+        });
+        console.log(await response.json())
+    }
 }
