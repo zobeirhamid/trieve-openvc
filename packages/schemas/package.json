@@ -1,5 +1,5 @@
 {
-    "name": "@trieve-opencv/schemas",
+    "name": "@trieve-openvc/schemas",
     "version": "1.0.0",
     "private": true,
     "main": "index.ts",

@@ -1,7 +1,7 @@
 import { load } from 'cheerio'
 import path from 'path'
 import { sleep } from 'bun'
-import { VentureCapitalistSchema, type TrieveChunk, type VentureCapitalist  } from "@trieve-opencv/schemas"
+import { VentureCapitalistSchema, type TrieveChunk, type VentureCapitalist  } from "@trieve-openvc/schemas"
 
 const headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36' }
 
