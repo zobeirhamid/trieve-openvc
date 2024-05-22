@@ -1,17 +1,17 @@
 import { load, type CheerioAPI } from 'cheerio'
 import path from 'path'
-import type { VentureCapitalist } from '../types'
+import type { TrieveChunk, VentureCapitalist } from '../types'
 import { sleep } from 'bun'
 import { VentureCapitalistSchema } from '../schemas'
 
 const headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36' }
 
-export async function fetchOpenVCHTML() {
+async function fetchOpenVCHTML() {
     const response = await fetch('https://www.openvc.app/search', { headers })
     return await response.text()
 }
 
-export async function fetchOpenVCDetailHTML(link: string, retry = 5) {
+async function fetchOpenVCDetailHTML(link: string, retry = 5) {
     const response = await fetch(link, { headers })
     const html = await response.text()
     if (html.includes('<title>Just a moment...</title>')) {
@@ -48,13 +48,13 @@ const openVCMap: {[key: string]: [keyof VentureCapitalist, (raw: any) => any]} =
     'Website': ['website', (raw: string) => raw.trim()],
 }
 
-export function extractVCDetails(html: string): VentureCapitalist {
+export function extractVC(html: string): VentureCapitalist {
     const $ = load(html)
     const name = $('h1').text()
-    const details: VentureCapitalist = { name }
+    const vc: VentureCapitalist = { name }
 
     const rawLogo = $('#fundHeader img').attr('src')
-    if (rawLogo) details['logo'] = path.join('https://www.openvc.app/', rawLogo)
+    if (rawLogo) vc['logo'] = path.join('https://www.openvc.app/', rawLogo)
 
     const tables = $('.fundDetail')
     tables.each((tableIndex, table) => {
@@ -76,29 +76,27 @@ export function extractVCDetails(html: string): VentureCapitalist {
             
             })
             if (pair.key && pair.key in openVCMap) {
-                details[openVCMap[pair.key][0]] = openVCMap[pair.key][1](pair.value)
+                vc[openVCMap[pair.key][0]] = openVCMap[pair.key][1](pair.value)
             }
         })
 
     })
 
-    Object.entries(details).forEach(([key, value])=> {
-        if (!value || value === 'N/A') delete details[key as keyof VentureCapitalist]
+    Object.entries(vc).forEach(([key, value])=> {
+        if (!value || value === 'N/A') delete vc[key as keyof VentureCapitalist]
     })
 
-    return details
+    return vc
 }
 
-export async function scrape() {
-    const vcs: VentureCapitalist[] = []
-    const links = extractVCLinks(await fetchOpenVCHTML()).slice(0, 20)
+export async function scrapeTrieveChunks(links: string[]) {
+    const chunks: TrieveChunk[] = []
     for (const link of links) {
-        await sleep(1000)
         const html = await fetchOpenVCDetailHTML(link)
         if (html) {
-            const vc = extractVCDetails(html)
-            if(VentureCapitalistSchema.safeParse(vc).success) vcs.push(vc)
+            const vc = extractVC(html)
+            if(VentureCapitalistSchema.safeParse(vc).success) chunks.push({ link, chunkHTML: html, metadata: vc})
         } else console.log('Failed:', link)
     }
-    return vcs
+    return chunks
 }
