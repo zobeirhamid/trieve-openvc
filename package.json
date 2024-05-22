@@ -1,0 +1,19 @@
+{
+  "name": "trieve-openvc",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "scrape": "bun scripts/scrape.ts",
+    "test": "bun test --timeout 100000"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  }
+}

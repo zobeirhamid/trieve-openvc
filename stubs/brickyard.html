@@ -1,0 +1,1385 @@
+<head>
+    <link rel="canonical" href="https://www.openvc.app/fund/Brickyard" />
+</head>
+<body>
+
+    <script>
+var geocode = undefined;
+</script>
+<!-- NAV -->
+        <!-- END NAV -->
+<div id="fundBody" class="isModal">
+    <div id="fundHead">
+        <div class="pt-3 pr-1" style="background-color:#1a1a1a;    z-index: 2;">
+            <div id="fundHeader" class="text-center w-100" style="
+                line-height: 100px;
+                                    flex-wrap:wrap;
+                display:flex;
+                justify-content:center; align-items:center">
+                <div>
+
+                                                <button data-toggle="tooltip" title="" class="btn btn-success btn-circle badge-verified" data-original-title="This investor is verified"><i class="far fa-check-circle mr-1"></i>Verified</button>
+                                                                        <img width="99px" src="./images/funds/recBS0dXE2yAcpfCl.jpg" class="rounded" title="Brickyard Logo" alt="Brickyard Logo">
+                                        </div>
+                <div class="d-flex flex-column justify-content-center">
+                    <h1 class="mb-3 font-weight-bold text-center text-white px-5"  style='font-size: 2.2rem'>Brickyard</h1>
+                    <div id="socialIcons" class="d-flex justify-content-center">
+                    <a target="_blank" href="https://www.linkedin.com/company/justlaybrick" rel="nofollow" class="fund-social-btn text-decoration-none" style="background-color:#2867B2; color:white"><i class="fab fa-linkedin-in"></i></a><a target="_blank" href="https://www.justlaybrick.com/" rel="nofollow" class="fund-social-btn text-decoration-none" style="background-color:white; color:black"><i class="fas fa-link"></i></a>                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-2" id="fundBg" style="
+            background-image: url(images/fund_bg.svg);
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            width:100%;
+            background-position-y: -19px;
+            z-index:1;
+                            ">
+        </div>
+
+        <div id="fundAlert" class="text-center alert alert-warning fade d-none show" role="alert">
+            <strong>Caution</strong> You are in edit mode ! <a onclick="$('#cancelChangesBtn').click()">Cancel changes</a>
+        </div>
+    </div>
+    <div class="container" id="fundCont">
+        <div class="my-5 p-5 d-none" id="changesWindow">
+            <button type="button" class="close" onclick="$('#changesWindow').addClass('d-none')" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h3>Confirm changes</h3>
+                <strong>Please review and confirm your changes below.</strong>
+                                    <div class="alert alert-success mt-3 mb-3 d-none result"></div>
+                <div class="alert text-center alert-danger fade show d-none" id="captchaError2">
+                    Please validate captcha
+                </div>
+            <div class="row mt-3 justify-content-center mb-3">
+                <div id="recaptcha2"></div>
+            </div>
+            <div id="changesSuccess" class="alert alert-success mt-3 mb-3 d-none"></div>
+            <div id="changesError" class="alert alert-danger mt-3 mb-3 d-none"></div>
+            <div class="row justify-content-center">
+                <button type="button" disabled class="btn btn-success mr-3">
+                    <div class="d-none spinner-border spinner-border-sm mr-1" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    Confirm changes
+                </button>
+                <button type="button" onclick="$('#changesWindow').addClass('d-none')" class="btn btn-danger">Cancel</button>
+            </div>
+        </div>
+        <div class="my-5 p-5 d-none" id="emailWindow">
+            <button type="button" class="close" onclick="$('#emailWindow').addClass('d-none')" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h3 class="text-center mb-3"><i class="fas fa-exclamation-triangle"></i> Are you an employee of this fund ?</h3>
+                <p class="text-center mb-3"><strong>Add your professional email address below for verification</strong></p>
+                <div class="alert alert-danger mt-3 mb-3 d-none">This email address seems invalid, please retry.</div>
+                <input type="text" value="" placeholder="Your professional email address" class="form-control my-3"/>
+            <div class="row justify-content-center">
+                <button type="button" class="btn btn-primary mr-3">Submit and start editing</button>
+                <button type="button" onclick="$('#emailWindow').addClass('d-none')" class="btn btn-danger">Cancel</button>
+            </div>
+        </div>
+                    <div id="fundBodx" >
+                            <h4 id="overview" class="pt-3 ">Overview</h4>
+            <table class="mt-3 table fundDetail mb-5">
+                <tr class="d-none"><td>Who we are</td><td>N/A</td></tr><tr class="d-none"><td>Value add</td><td>N/A</td></tr><tr><td>Firm type</td><td>Incubator, Accelerator</td></tr><tr><td>Global HQ</td><td><p>917 E. 16th St, Chattanooga, TN 37408, United States</p><div class='mt-3 mapContainer' style='border-radius:6px' id='map_906e48fa92'></div><script>geocode = [35.0308267,-85.2954838];</script></td></tr><tr class="d-none"><td>Branch office #1<i data-toggle="tooltip" title="Fill in a complete postal address to appear on the VC map" class="ml-1 cursor-pointer fas fa-info-circle"></i></td><td></td></tr><tr class="d-none"><td>Branch office #2<i data-toggle="tooltip" title="Fill in a complete postal address to appear on the VC map" class="ml-1 cursor-pointer fas fa-info-circle"></i></td><td></td></tr><tr class="d-none"><td>Branch office #3<i data-toggle="tooltip" title="Fill in a complete postal address to appear on the VC map" class="ml-1 cursor-pointer fas fa-info-circle"></i></td><td></td></tr><tr class="d-none"><td>Branch office #4<i data-toggle="tooltip" title="Fill in a complete postal address to appear on the VC map" class="ml-1 cursor-pointer fas fa-info-circle"></i></td><td></tr><tr class="d-none"><td>Branch office #5<i data-toggle="tooltip" title="Fill in a complete postal address to appear on the VC map" class="ml-1 cursor-pointer fas fa-info-circle"></i></td><td></td></tr><tr><td>Application periodicity</td><td>N/A</td></tr><tr><td>Next deadline to apply</td><td>N/A</td></tr>                </table>
+            <h4 class="mt-5 " id="thesis">Thesis</h4>
+            <table class="mt-5 table fundDetail mb-5">
+                <tr><td>Funding requirements</td><td>We invest in pre-seed founders building all categories of high-growth companies. SaaS, marketplaces, crypto, AI, e-commerce, consumer tech, etc. </td></tr><tr><td>Funding stages</td><td><span class="badge badge-primary mr-1 mb-1">1. Idea or Patent</span><span class="badge badge-primary mr-1 mb-1">2. Prototype</span><span class="badge badge-primary mr-1 mb-1">3. Early Revenue</span><span class="badge badge-primary mr-1 mb-1">4. Scaling</span></tr></td><tr><td data-min="50000" data-max="250000">Check size</td><td>$50k to $250k</td></tr><tr><td>Target countries</td><td id="countEdit"><a href="country/USA" target="_blank"><span class="badge badge-primary mr-1 mb-1"><img loading="lazy" src="https://www.openvc.app/images/flags/us.png"> USA</span></a></tr></td><tr><td>Typical terms</td><td>N/A</td></tr>                </table>
+                                                                                <h4 class="settingsElem mt-5 d-none" id="settings">Settings</h4>
+            <table class="settingsElem mt-5 d-none table fundDetail mb-5">
+                <tr>
+                    <td>How to get in touch<i data-toggle="tooltip" title="Select Email address if you want startup founders to be able to send you their deck by email.<br>Select Online form if you prefer to receive submissions through your firm's online form.<br>Select Intro preferred if you do not want to receive deal flow through OpenVC." class="ml-1 cursor-pointer fas fa-info-circle"></i></td>
+                    <td>
+                        Email address                        </td>
+                </tr>
+                <tr>
+                    <td>Default email or URL to receive deal flow<i data-toggle="tooltip" title="The contact email or the online form URL you want to use to receive deck submissions, depending on what you selected in the field 'How to get in touch'." class="ml-1 cursor-pointer fas fa-info-circle"></i></td>
+                    <td>
+                                                </td>
+                </tr>
+                <tr><td>CRM<i data-toggle="tooltip" title="Your CRM to manage deal flow. Integrations coming soon!" class="ml-1 cursor-pointer fas fa-info-circle"></i></td><td></td></tr><tr><td>Linkedin<i data-toggle="tooltip" title="URL to your firm's LinkedIn page. Must be a valid LinkedIn company URL and start with http or https." class="ml-1 cursor-pointer fas fa-info-circle"></i></td><td>https://www.linkedin.com/company/justlaybrick</td></tr><tr class="d-none"><td>Twitter<i data-toggle="tooltip" title="Your firm's Twitter handle. Must start with @." class="ml-1 cursor-pointer fas fa-info-circle"></i></td><td></td></tr><tr><td>Website<i data-toggle="tooltip" title="URL to your firm's website. Must be a valid URL and start with http or https." class="ml-1 cursor-pointer fas fa-info-circle"></i></td><td>https://www.justlaybrick.com/</td></tr>                </table>
+
+        </div>
+        <span id="preConfirm"></span>
+        <div id="fundFoot" class="mb-4 flex-wrap mt-5 d-flex justify-content-center">
+        <button id="submitDeckBtn" class="btn btn-primary mt-1" onclick="submitDeck('recBS0dXE2yAcpfCl', false)"><i class="fas fa-envelope"></i> Apply now</button>            </div>
+    </div>
+    <div class="container d-none" id="submitCont">
+        <nav id="submit-navbar" class=" navbar navbar-light bg-light justify-content-center mb-3">
+            <ul class="nav nav-pills w-100 justify-content-around">
+                <li class="nav-item">
+                    <a id="confirmFitNavbarBtn" class="cursor-pointer nav-link active">1. Confirm fit</a>
+                </li>
+                <li class="nav-item">
+                    <a id="pickRecipientNavbarBtn" class="cursor-pointer nav-link">2. Pick recipient</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">3. Submit deck</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mb-5 d-none" id="confirmWindow">
+                <h4 class="mt-3">Do you fit this investor's criteria ?</h4>
+                                        <p class="mt-4">We invest in pre-seed founders building all categories of high-growth companies. SaaS, marketplaces, crypto, AI, e-commerce, consumer tech, etc. </p>
+                                <div class="row justify-content-center">
+                <button type="button" onclick="validSubmit(this)" disabled class="btn btn-success mr-3">
+                    <div id="submitCD" class="d-inline-block">
+                        <div class="spinner-border spinner-border-sm mr-1" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    Read the thesis first (<span id="CDcont">3s</span>)
+                </button>
+            </div>
+        </div>
+        <div class="mb-5 d-none slide-in-right" id="recipientWindow">
+                <h4 class="mt-3">Pick the best recipient for your submission</h4>
+                <div class="table-responsive">
+                    <table class="mt-3 table">
+                                                            <tr><td class="text-center align-middle"><i class="mr-1 fas fa-envelope-open-text"></i></td><td class="align-middle px-2"><strong>Default&nbsp;Email</strong></td><td class="px-2 align-middle" >The fund's default email for cold outreach</td><td class="align-middle"><button onclick="selectRecipient('default','recBS0dXE2yAcpfCl',this)" class="recipientSelect btn btn-primary"><i class="mr-1 fas fa-envelope"></i>Submit deck</button></tr>
+                                                        </table>
+                </div>
+        </div>
+        <div class="mb-5 d-none slide-in-right" id="embeddedEmailWindow">
+                                <h4 class="mt-3">Send your email</h4>
+                                                <div class="alert text-center mt-3 alert-danger">You need to be logged in as a founder to submit your deck to investors.<br><span class="cursor-pointer font-weight-bold" onclick="$('#signupBtn').click()"><i class="fas fa-user-plus mr-1"></i><u>Sign up or log in now</u></span></div>
+                                            <div class="form-group mt-4">
+                    <label for="subjectInput">
+                        Subject
+                        <br>
+                        <small class="text-muted">
+                        Example 1 : <em>"AI/SaaS - +30% MoM revenue - US - Pre-Seed"</em><br>
+                        Example 2 : <em>"B2C Delivery - Lead secured - Germany - Seed"</em>
+                        </small>
+                    </label>
+                                            <input maxlength="54" type="text" name="subject" value="" placeholder="Email subject" class="form-control" id="subjectInput">
+                    <span id="subjectError" class="d-none"></span>
+                    <div id="subjectFeedback" class="w-100 d-none">
+                        <button id="subjectFeedbackHeading" class="w-100 h5 mt-3 mb-0 btn p-2 text-left collapsed text-white" style="border: none;background-color: #ff007e;font-weight: bold;" data-toggle="collapse" data-target="#subjectFeedbackCollapse" aria-expanded="true" aria-controls="subjectFeedbackCollapse">
+                            <i class="fas fa-lightbulb mr-2"></i><span>Instant Feedback</span>
+                        </button>
+                        <div id="subjectFeedbackCollapse" class="collapse show" aria-labelledby="subjectFeedbackHeading" data-parent="#subjectFeedback">
+                            <div class="card-body bg-light">
+                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Please follow the guidelines for email subject and avoid terms like "pitch", "deck", "intro" or "opportunity".</p>
+                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Please remove quotation marks from the start and/or the end of the email subject.</p>
+                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Please do not use too much CAPS</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="form-group mt-4">
+                    <label for="messageInput">
+                        Message
+                        <br>
+                        <small class="text-muted">
+                            Start with <em>"Hi + name"</em> or <em>"Hello XXX team"</em>. Write a custom intro that shows thesis fit.<br>
+                            Keep it short. Use bullet points to list 3 strong facts about your team, traction, market.<br>
+                            Don't include extra URLs. Close with a clear CTA. Sign with your name and title.
+                        </small>
+                    </label>
+                    <textarea maxlength="1400" name="body" placeholder="Email body" class="form-control" rows="6" id="messageInput"></textarea>
+
+                        <button disabled class="btn btn-secondary"><i style="color:#fff400" class="fas fa-bolt mr-2"></i>Enhance with AI</button>
+                        <div class="d-flex mt-2"><small>You need to be logged in as a founder to use AI enhancement.</small><i class="cursor-pointer AIenhanceInfo ml-1 far fa-question-circle"></i></div>
+
+                    <span id="messageError" class="d-none"></span>
+                    <div id="messageFeedback" class="w-100 d-none">
+                        <button id="feedbackHeading" class="w-100 h5 mt-3 mb-0 btn p-2 text-left collapsed text-white" style="border: none;background-color: #ff007e;font-weight: bold;" data-toggle="collapse" data-target="#feedbackCollapse" aria-expanded="true" aria-controls="feedbackCollapse">
+                            <i class="fas fa-lightbulb mr-2"></i><span>Instant Feedback</span>
+                        </button>
+                        <div id="feedbackCollapse" class="collapse show" aria-labelledby="feedbackHeading" data-parent="#messageFeedback">
+                            <div class="card-body bg-light">
+                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Start your email with a personal greeting eg. "Hi John," or "Hello XXX Team,".</p>
+                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Don't share a read-only Google Slides, it may be poorly perceived by some investors. Instead, host a PDF on DocSend or Google Drive and share that link.</p>
+                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Make sure to include numbers (growth, revenue, etc.) in your email to capture attention.</p>
+                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Write shorter paragraphs to improve readibility. You can also use bulletpoints if you need to list down information.</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="form-group mt-5">
+                Your pitch deck<br>
+                                    <div class=" accordion" id="pitchDeckAccordion">
+                    <div class="card mt-3">
+                        <div class="card-header" id="pitchDeckHeadingOne">
+                        <h2 class="mb-0">
+                            <button class="btn p-0 btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#pitchDeckCollapseOne" aria-expanded="false" aria-controls="pitchDeckCollapseOne">
+                            <i class="fas fa-file-upload mr-2"></i>Share via OpenVC (includes tracking & follow-up)
+                            </button>
+                        </h2>
+                        </div>
+
+                        <div id="pitchDeckCollapseOne" class="collapse" aria-labelledby="pitchDeckHeadingOne" data-parent="#pitchDeckAccordion">
+                        <div class="card-body border">
+                            <small class="text-muted">
+                            Upload your deck (pdf only, 10Mb max). Send investors a unique link. Track when you deck is viewed and get investor feedback.
+                            </small>
+                                                                <p class="mt-3 text-center">
+                                    You need to sign up to upload your deck to OpenVC.
+                                    <br>
+                                    <a class="btn ml-3 mb-3 btn-link text-primary" onclick="$('#signupBtn').click()"><i class="fas fa-user-plus mr-1"></i>Create an account, it's 100% free !</a>
+                                </p>
+                                                        </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="pitchDeckHeadingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link p-0 btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#pitchDeckCollapseThree" aria-expanded="false" aria-controls="pitchDeckCollapseThree">
+                            <i class="fas fa-external-link-alt mr-2"></i>Share via external link (DocSend, Dropbox...)
+                            </button>
+                        </h2>
+                        </div>
+                        <div id="pitchDeckCollapseThree" class="collapse" aria-labelledby="pitchDeckHeadingThree" data-parent="#pitchDeckAccordion">
+                            <div class="card-body border form-group">
+                                    <label for="uploadInput">
+                                        <small class="text-muted">
+                                            Host your pitch deck on Docsend, Dropbox, Google Drive, etc.<br>Don't password protect it.
+                                        </small>
+                                    </label>
+                                    <input name="deck" type="text" placeholder="Direct URL to your pitch deck" class="form-control" id="uploadInput">
+                                    <span id="uploadError" class="d-none"></span>
+                                    <div id="deckFeedback" class="w-100 d-none">
+                                        <button id="deckFeedbackHeading" class="w-100 h5 mt-3 mb-0 btn p-2 text-left collapsed text-white" style="border: none;background-color: #ff007e;font-weight: bold;" data-toggle="collapse" data-target="#deckFeedbackCollapse" aria-expanded="true" aria-controls="deckFeedbackCollapse">
+                                            <i class="fas fa-lightbulb mr-2"></i><span>Instant Feedback</span>
+                                        </button>
+                                        <div id="deckFeedbackCollapse" class="collapse show" aria-labelledby="deckFeedbackHeading" data-parent="#deckFeedback">
+                                            <div class="card-body bg-light">
+                                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Please provide a direct link to the pitch deck - not to a folder</p>
+                                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Don't share a read-only Google Slides, it may be poorly perceived by some investors. Instead, host a PDF on DocSend or Google Drive and share that link.</p>
+                                                <p class="d-none"><i class="fas fa-long-arrow-alt-right mr-1"></i>Your link doesn't work. We recommend hosting your pitch deck as a PDF on Google Drive, Dropbox, DocSend, etc.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                <div class="alert text-center mt-3 alert-danger">You need to be logged in as a founder to submit your deck to investors.<br><span class="cursor-pointer font-weight-bold" onclick="$('#signupBtn').click()"><i class="fas fa-user-plus mr-1"></i><u>Sign up or log in now</u></span></div>
+                        </div>
+        <div class="row justify-content-center" id="submitFoot">
+                <button type="button" class="d-none btn btn-danger" id="declineAlert">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+    <!-- END FOOTER -->
+<script>(function(){if (!document.body) return;var js = "window['__CF$cv$params']={r:'887e5df43955945f',t:'MTcxNjM5NzI3NC44NDAwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+<!-- END BODY -->
+<script>
+if(typeof cd =="undefined") var cd = 0;
+else clearInterval(cd)
+function nFormatter(num, digits) {
+    var si = [
+        { value: 1, symbol: "" },
+        { value: 1E3, symbol: "k" },
+        { value: 1E6, symbol: "M" },
+        { value: 1E9, symbol: "B" }
+    ];
+    var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+    var i;
+    for (i = si.length - 1; i > 0; i--) {
+        if (num >= si[i].value) {
+        break;
+        }
+    }
+    return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
+}
+$('[data-toggle="tooltip"]').tooltip({html:true})
+//GTM DL PUSH
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+    'event': 'fund_displayed',
+    'name' : 'Brickyard'
+});
+//SUBMIT DECK
+function submitDeck(id){
+    let modal = $('#confirmWindow');
+    //declineALert = cancel submit deck btn
+    $('#declineAlert').removeClass("d-none");
+    $('#declineAlert').on('click', function (e) {
+        $('#confirmWindow').find('button.btn-success').prop('disabled', false)
+        $('#captchaError').addClass('d-none');
+        $('#submitCont').addClass('d-none');
+        $('#recipientWindow').addClass('d-none');
+        $('#embeddedEmailWindow').addClass('d-none');
+        $('#fundCont').removeClass('d-none');
+        $('#editFundBtn').removeClass('d-none');
+        $('#submitDeckBtn').removeClass('d-none');
+        $('#declineAlert').addClass("d-none");
+        $('#submit-navbar > ul > li:nth-child(1) > a').addClass('active')
+        $('#submit-navbar > ul > li:nth-child(2) > a').removeClass('active')
+        $('#submit-navbar > ul > li:nth-child(3) > a').removeClass('active')
+    })
+    $('#fundCont').addClass('d-none');
+    $('#editFundBtn').addClass('d-none');
+    $('#submitDeckBtn').addClass('d-none');
+    $('#submitCont').removeClass('d-none');
+    modal.find('.result').addClass('d-none')
+    modal.find('button.btn-success').attr('data-id', id);
+    modal.removeClass('d-none');
+    var timeleft = 3 -1;
+    cd = setInterval(function(){
+        if(timeleft <= 0){
+            clearInterval(cd);
+            modal.find('button.btn-success').prop('disabled', false);
+            modal.find('button.btn-success').html('<i class="fas fa-check mr-2"></i>Yes, proceed');
+            $('#pickRecipientNavbarBtn').attr('onclick','backtorecipient()');
+            $('#confirmFitNavbarBtn').attr('onclick','backtofitconfirm()');
+        }
+        $('#CDcont').text(timeleft + 's');
+        timeleft -= 1;
+     }, 1000);
+    document.getElementById("preConfirm").scrollIntoView({ behavior: 'smooth' });
+}
+// YES, PROCEED
+alreadyFetched = false;
+function checkSubAllowStatus(elem){
+    $(elem).prop('disabled', true)
+    return $.ajax({
+            type: 'get',
+            url: 'serverside/getSubAllowStatus'
+    })
+}
+function validSubmit(elem,isDirectToUser = false,id1,id2){
+                confirmValidSubmit(elem)
+        return
+        }
+function confirmValidSubmit(elem){
+    $(elem).prop('disabled', true)
+    $('#confirmWindow').addClass('d-none');
+    $('#submit-navbar > ul > li:nth-child(1) > a').removeClass('active')
+            $('#submit-navbar > ul > li:nth-child(2) > a').addClass('active')
+                $('#recipientWindow').removeClass("d-none");
+        }
+// recipient selected
+function selectRecipient(opt,id,btn){
+    $('#recipientCont').remove()
+    $('#AIenhanceBtn').attr('data-firmid', id)
+    $('#AIenhanceBtn').attr('data-recipientid', opt)
+    if(btn)
+        recipient = $(btn).parents('tr').html()
+                $.ajax({
+            type: 'get',
+            url: 'components/modals/loggedOutSignup.html',
+            success: function (res) {
+                bootstrap.showModal(
+                    {
+                        modalClass:"pinkModal loggedOutSignupModal",
+                        modalDialogClass:'modal-lg modal-dialog-centered',
+                        options: {
+                            backdrop: 'static'
+                        },
+                        body: res,
+                        title: 'Sign up to OpenVC'
+                    })
+            }
+        });
+            let modal = $('#embeddedEmailWindow');
+    if(btn && recipient){
+        $('#fromCont').append('<div id="recipientCont" class="mt-2"><label>Your recipient</label><br><table class="mb-5">'+recipient+'</table></div>')
+        $('#recipientCont').find('td:last-child').remove()
+    }
+    var url = "components/getEmail/sendEmail.php";
+    $('#submit-navbar > ul > li:nth-child(3) > a').addClass('active')
+    $('#submit-navbar > ul > li:nth-child(2) > a').removeClass('active')
+    $('#messageInput').maxlength({
+        alwaysShow: true,
+        appendToParent: true
+    });
+    $('#subjectInput').maxlength({
+        alwaysShow: true,
+        appendToParent: true
+    });
+    $('#recipientWindow').addClass('d-none');
+    $('#embeddedEmailWindow').removeClass('d-none');
+    resetCaptcha();
+    $('#confirmSubmitDeck').unbind().on('click', function (e) {
+        modal.find('#recaptcha').hide();
+        modal.find('.spinner-border').removeClass('d-none');
+        modal.find('.result').addClass('d-none');
+        $('#confirmSubmitDeck').prop('disabled',true);
+        let captcha = grecaptcha.getResponse(
+            submitCaptcha
+        )
+        if(!captcha){
+            $('#captchaError').removeClass('d-none');
+            return;
+        }
+        var map = {};
+        var form_data = new FormData();
+        $("#embeddedEmailWindow input, #messageInput").each(function() {
+            map[$(this).attr("name")] = $(this).val();
+        });
+        if(typeof $('#existing_deck')[0] !== "undefined" && $('#existing_deck').val() !=='')
+            form_data.append("existing_sub_id", $('#existing_deck').val())
+        form_data.append("id", id)
+        form_data.append("token", captcha)
+        form_data.append("opt", opt)
+        form_data.append("data", JSON.stringify(map))
+                                $.ajax({
+            type: 'post',
+            url: url,
+            data: form_data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            complete: function (data) {
+                if(data.responseText!="")
+                    resp = JSON.parse(data.responseText);
+                else{
+                    modal.find('.result').removeClass('alert-success').addClass('alert-danger').html('<strong>File upload failed. Please check that your file is a valid PDF under 10MB and retry.</strong>').removeClass('d-none');
+                    $('#confirmSubmitDeck').prop('disabled',false);
+                    resetCaptcha();
+                }
+                modal.find('.spinner-border').addClass('d-none');
+                if(resp.response == "success"){
+                    if(typeof $('#VCmodal #fundBody')[0] !="undefined"){
+                        $('#VCmodal .modal-header').html('<button type="button" style="position:absolute;right:0.5em;top:0.5em;z-index:999" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>');
+                        $('#VCmodal .modal-footer').html('');
+                        $('#VCmodal .modal-body').html('<div class="p-5 modal-body text-center"><div class="mt-4">'+resp.message+'</div></div>');
+                    }
+                    else{
+                        $('#submitCont').html('<div class="p-5 modal-body text-center"><div class="mt-4">'+resp.message+'</div></div>');
+                    }
+                    //GTM DL PUSH
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                    'event': 'valid_submit',
+                    'name' : 'Brickyard'
+                    });
+                }
+                else if(resp.response == "error"){
+                    modal.find('.result').removeClass('alert-success').addClass('alert-danger').html('<strong>'+resp.error+'</strong>').removeClass('d-none');
+                    $('#confirmSubmitDeck').prop('disabled',false);
+                    modal.find('#recaptcha').show();
+                    resetCaptcha();
+                }
+                else{
+                    modal.find('.result').removeClass('alert-success').addClass('alert-danger').html('<strong>File upload failed. Please check that your file is a valid PDF under 10MB and retry.</strong>').removeClass('d-none');
+                    $('#confirmSubmitDeck').prop('disabled',false);
+                    modal.find('#recaptcha').show();
+                    resetCaptcha();
+                }
+
+
+            }
+        });
+    });
+    // SMART FEEDBACKS
+    function smartFeedbackBody(input) {
+        var result = [];
+        input = input.toLowerCase().trim();
+        if(!input.length){
+            $('#messageFeedback p').addClass('d-none')
+            return false
+        }
+        else if (input.indexOf(' ') == -1 && input.indexOf('\n') == -1){
+            $('#messageFeedback p').addClass('d-none')
+            return false
+        }
+        if (input.indexOf('docs.google') !== -1) {
+            $('#messageFeedback p:eq(1)').removeClass('d-none');
+            result.push('docs.google')
+        }
+        else $('#messageFeedback p:eq(1)').addClass('d-none');
+        if(input.startsWith('hi,')||input.startsWith('hi\n')){
+           $('#messageFeedback p:eq(0)').removeClass('d-none');
+           result.push(input.startsWith('hi,') ? 'hi,' : 'hi\n')
+        }
+        else if(input.startsWith('hello,')||input.startsWith('hello\n')){
+            $('#messageFeedback p:eq(0)').removeClass('d-none');
+           result.push(input.startsWith('hello,') ? 'hello,' : 'hello\n')
+        }
+        else if(input.startsWith('greetings,')||input.startsWith('greetings\n')){
+            $('#messageFeedback p:eq(0)').removeClass('d-none');
+           result.push(input.startsWith('greetings,') ? 'greetings,' : 'greetings\n')
+        }
+        else if(!input.startsWith('hello')&&!input.startsWith('hi')&&!input.startsWith('dear')&&!input.startsWith('greetings')){
+            $('#messageFeedback p:eq(0)').removeClass('d-none');
+            if(input.split('\n').length > 1)
+                result.push(input.split('\n')[0].split(' ')[0])
+            else result.push(input.split(' ')[0])
+        }
+        else {
+            $ ('#messageFeedback p:eq(0)').addClass('d-none');
+        }
+        if(!(/\d/.test(input))){
+            if(!$('#messageFeedback p:eq(2)').attr('data-init')){
+                setTimeout(function(){ $ ('#messageFeedback p:eq(2)').removeClass('d-none'); }, 3000);
+                $('#messageFeedback p:eq(2)').attr('data-init',true)
+            }
+            else  $ ('#messageFeedback p:eq(2)').removeClass('d-none');
+        }
+        else{
+            $ ('#messageFeedback p:eq(2)').addClass('d-none');
+        }
+        const paragraphs = input.split('\n')
+        var isTooLong = false;
+        for (let i = 0; i < paragraphs.length; i++) {
+            if(paragraphs[i].length > 400){
+                $('#messageFeedback p:eq(3)').removeClass('d-none');
+                result.push(paragraphs[i])
+                isTooLong = true;
+            }
+        }
+        if(!isTooLong)
+            $('#messageFeedback p:eq(3)').addClass('d-none');
+        let nbSuggestions = $('#messageFeedback p:not(.d-none)').length;
+        $('#feedbackHeading > span').html(nbSuggestions > 1 ? 'Instant Feedback: please review <u>'+nbSuggestions+" suggestions</u>" : 'Instant Feedback: please review <u>'+nbSuggestions+" suggestion</u>")
+        if(result.length > 0)
+             return result
+        else return false
+    }
+    function smartFeedbackSubject(input) {
+        if(!input.length){
+            $('#subjectFeedback p').addClass('d-none')
+            return false
+        }
+        var result = [];
+        const numUpper = input.length - input.replace(/[A-Z]/g, '').length;
+        input = input.toLowerCase().trim();
+        const w = ['pitch','opportunity','deck','intro'];
+        for (i = 0; i<w.length ;i++){
+            if (input.indexOf(w[i]) !== -1) {
+                $('#subjectFeedback p:eq(0)').removeClass('d-none');
+                result.push(w[i])
+            }
+        }
+        if(!result.length) $('#subjectFeedback p:eq(0)').addClass('d-none');
+        if(input.startsWith('"') || input.endsWith('"')){
+            $('#subjectFeedback p:eq(1)').removeClass('d-none');
+            result.push('"')
+        }
+        else $('#subjectFeedback p:eq(1)').addClass('d-none');
+        if(numUpper > 20){
+            $('#subjectFeedback p:eq(2)').removeClass('d-none');
+        }
+        else $('#subjectFeedback p:eq(2)').addClass('d-none');
+        let nbSuggestions = $('#subjectFeedback p:not(.d-none)').length;
+        $('#subjectFeedbackHeading > span').html(nbSuggestions > 1 ? 'Instant Feedback: please review <u>'+nbSuggestions+" suggestions</u>" : 'Instant Feedback: please review <u>'+nbSuggestions+" suggestion</u>")
+        if(result.length > 0)
+             return result
+        else return false
+    }
+    function smartFeedbackDeck(input) {
+        input = input.toLowerCase().trim();
+        if(input.length < 5){
+            $('#deckFeedback p').addClass('d-none')
+            return false
+        }
+        if (input.indexOf("docs.google") !== -1) {
+            $('#deckFeedback p:eq(1)').removeClass('d-none');
+            return "docs.google"
+        }
+        else $('#deckFeedback p:eq(1)').addClass('d-none');
+        if (input.indexOf("file://") !== -1) {
+            $('#deckFeedback p:eq(2)').removeClass('d-none');
+            return "file://"
+        }
+        else $('#deckFeedback p:eq(2)').addClass('d-none');
+        if (input.indexOf("folders") !== -1) {
+            $('#deckFeedback p:eq(0)').removeClass('d-none');
+            return "folders"
+        }
+        else $('#deckFeedback p:eq(0)').addClass('d-none');
+        return false
+    }
+    $('#messageInput').highlightWithinTextarea({
+        highlight: [smartFeedbackBody],
+        className: 'hwt-highlight'
+    });
+    $('#subjectInput').highlightWithinTextarea({
+        highlight: [smartFeedbackSubject],
+        className: 'hwt-highlight'
+    });
+    $('#uploadInput').highlightWithinTextarea({
+        highlight: [smartFeedbackDeck],
+        className: 'hwt-highlight'
+    });
+    $('#uploadInput').on('input', function() {
+        let nbSuggestions = $('#deckFeedback p:not(.d-none)').length;
+        $('#deckFeedbackHeading > span').html(nbSuggestions > 1 ? 'Instant Feedback: please review <u>'+nbSuggestions+" suggestions</u>" : 'Instant Feedback: please review <u>'+nbSuggestions+" suggestion</u>")
+        const feedback = $('#deckFeedback p:not(.d-none)')[0]
+        if(feedback) $('#deckFeedback').removeClass('d-none')
+        else $('#deckFeedback').addClass('d-none')
+    });
+    $('#fromInput').on('input', function() {
+        let nbSuggestions = $('#addressFeedback p:not(.d-none)').length;
+        $('#addressFeedbackHeading > span').html(nbSuggestions > 1 ? 'Instant Feedback: please review <u>'+nbSuggestions+" suggestions</u>" : 'Instant Feedback: please review <u>'+nbSuggestions+" suggestion</u>")
+        const feedback = $('#addressFeedback p:not(.d-none)')[0]
+        if(feedback) $('#addressFeedback').removeClass('d-none')
+        else $('#addressFeedback').addClass('d-none')
+    });
+            $('#subjectInput').on('input', function() {
+        let nbSuggestions = $('#subjectFeedback p:not(.d-none)').length;
+        $('#subjectFeedbackHeading > span').html(nbSuggestions > 1 ? 'Instant Feedback: please review <u>'+nbSuggestions+" suggestions</u>" : 'Instant Feedback: please review <u>'+nbSuggestions+" suggestion</u>")
+        const feedback = $('#subjectFeedback p:not(.d-none)')[0]
+        if(feedback) $('#subjectFeedback').removeClass('d-none')
+        else $('#subjectFeedback').addClass('d-none')
+    });
+    $('#messageInput').on('input', function() {
+        let nbSuggestions = $('#messageFeedback p:not(.d-none)').length;
+        $('#feedbackHeading > span').html(nbSuggestions > 1 ? 'Instant Feedback: please review <u>'+nbSuggestions+" suggestions</u>" : 'Instant Feedback: please review <u>'+nbSuggestions+" suggestion</u>")
+        const feedback = $('#messageFeedback p:not(.d-none)')[0]
+        if(feedback) $('#messageFeedback').removeClass('d-none')
+        else $('#messageFeedback').addClass('d-none')
+    });
+}
+function backtofitconfirm(){
+    let modal = $('#confirmWindow');
+    $('#submit-navbar > ul > li:nth-child(1) > a').addClass('active')
+    $('#submit-navbar > ul > li:nth-child(2) > a').removeClass('active')
+    $('#submit-navbar > ul > li:nth-child(3) > a').removeClass('active')
+    $('#recipientWindow').addClass("d-none");
+    $('#embeddedEmailWindow').addClass('d-none');
+    $('#confirmWindow').removeClass('d-none');
+    modal.find('button.btn-success').prop('disabled', false)
+}
+function backtorecipient(){
+    $('#submit-navbar > ul > li:nth-child(1) > a').removeClass('active')
+    $('#submit-navbar > ul > li:nth-child(2) > a').addClass('active')
+    $('#submit-navbar > ul > li:nth-child(3) > a').removeClass('active')
+    $('#recipientWindow').removeClass("d-none");
+    $('#embeddedEmailWindow').addClass('d-none');
+    $('#confirmWindow').addClass('d-none');
+}
+// CAPTCHA FUNCTIONS
+function resetCaptcha(){
+    try{grecaptcha.reset()}
+        catch{null}
+        let theme = $('body').hasClass('darkTheme') ? 'dark' : 'light'
+        try{
+            submitCaptcha = grecaptcha.render('recaptcha', {
+                'sitekey' : '6Lf1uoQaAAAAAKxByW26frHqUiQexdOdWV9Lp3yr',
+                'theme' : theme,
+                'callback' : 'recaptchaCallback'
+            });
+        }
+        catch{null}
+}
+function recaptchaCallback() {
+    $('#captchaError').addClass('d-none');
+    $('#confirmSubmitDeck').prop('disabled', false)
+    modal.find('.spinner-border').addClass('d-none');
+};
+function recaptchaCallback2() {
+    $('#captchaError2').addClass('d-none');
+    $('#changesWindow').find('button.btn-success').prop('disabled',false)
+};
+$( document ).ready(function() {
+    $('.AIenhanceInfo').unbind().on('click', function(e){
+            var infoBody = '<div class="pb-4 pt-2"><h4>How it works</h4>1. Write your cold email<br>2. Click "Enhance with AI"<br>3. Your email is magically improved<h4 class="mt-4">Limitations</h4>1. AI makes mistakes, always proofread your email<br>2. Free accounts get 3 enhancements/month<br>3. Premium accounts get 100 enhancements/month</div>'
+                    bootstrap.showModal(
+            {
+                modalClass:"pinkModal AIenhanceInfoModal text-center",
+                modalDialogClass:"modal-dialog-centered",
+                title : '<i style="color:#fff400" class="fas fa-bolt mr-3"></i>Enhance with AI',
+                options: {
+                    backdrop: true
+                },
+                body: infoBody
+            })
+    })
+            //pitch deck accordion
+    $('#pitchDeckAccordion .card-header button').unbind().on('click', function(){
+        if ($(this).parents('.card-header').hasClass('active'))
+            $('#pitchDeckAccordion .card-header').removeClass('active')
+        else {
+            $('#pitchDeckAccordion .card-header').removeClass('active')
+            $(this).parents('.card-header').addClass('active')
+        }
+    })
+    $('#otherDeckBtn').unbind().on('click', function(){
+        $('#pitchDeckAccordion').removeClass('d-none')
+        $('#existingDeckCont').remove()
+    })
+    //autocomplete values
+    var autocomplete = null;
+    const isRBF = false;
+    const isAccel = true;
+    const isAngel = false;
+    if(isRBF){
+        investor_types = ['Revenue-based'];
+    }
+    else if(isAccel){
+        investor_types = ['Incubator, Accelerator'];
+    }
+    else if(isAngel){
+        investor_types = ['Solo angel'];
+    }
+    else{
+        investor_types = [
+                        'VC',
+                        'Corporate VC',
+                        'Family office',
+                        'Angel network',
+                        'Solo angel',
+                        'Public fund',
+                        'PE fund',
+                        'Incubator, Accelerator',
+                        'Startup studio',
+                        'Other'
+    ];
+    }
+    var stage_list=['1. Idea or Patent','2. Prototype', '3. Early Revenue', '4. Scaling', '5. Growth', '6. Pre-IPO'];
+    var social_list=['Linkedin','Twitter','Website','Other'];
+    var crm_list = ['Affinity','Airtable','Hubspot','Pipedrive','Salesforce','Other'];
+    //MAP
+    function initMap(){
+        if(typeof geocode !== 'undefined'){
+            fundmap = L.map('map_906e48fa92').setView(geocode, 2);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 12,
+                minZoom : 2,
+                maxBoundsViscosity: 1.0
+            }).addTo(fundmap);
+            fundmap.scrollWheelZoom.disable();
+            L.marker(geocode).addTo(fundmap);
+        }
+    }
+    var fundSchema = [
+        {"data" : "Who we are", "status" : false},
+        {"data" : "How to get in touch", "status" : false},
+        {"data" : "Verification email", "status" : false},
+        {"data" : "Value add" , "status" : false},
+        {"data" : "Firm type", "status" : false},
+        {"data" : "Global HQ", "status" : false},
+        {"data" : "Branch offices", "status" : false},
+        {"data" : "Funding requirements", "status" : false},
+        {"data" : "Funding stages", "status" : false},
+        {"data" : "Check size", "status" : false},
+        {"data" : "Target countries", "status" : false},
+        {"data" : "Linkedin", "status" : false},
+        {"data" : "Twitter", "status" : false},
+        {"data" : "Website", "status" : false},
+        {"data" : "Other", "status" : false},
+        {"data" : "Default email or URL to receive deal flow", "status" : false},
+        {"data" : "CRM", "status" : false},
+        {"data" : "Branch office #1", "status" : false},
+        {"data" : "Branch office #2", "status" : false},
+        {"data" : "Branch office #3", "status" : false},
+        {"data" : "Branch office #4", "status" : false},
+        {"data" : "Branch office #5", "status" : false}
+    ]
+    if(!isRBF && !isAccel && !isAngel){
+        fundSchema = fundSchema.concat([{"data" : "Lead", "status" : false}]);
+    }
+    else if(isRBF){
+        let RBFdata = [
+            {"data" : "Time to money", "status" : false},
+            {"data" : "Typical fee", "status" : false}
+        ];
+        fundSchema = fundSchema.concat(RBFdata);
+    }
+    else if(isAccel){
+        let accelData = [
+            {"data" : "Typical terms", "status" : false},
+            {"data" : "Next deadline to apply", "status" : false},
+            {"data" : "Application periodicity", "status" : false}
+        ];
+        fundSchema = fundSchema.concat(accelData);
+    }
+    else if(isAngel){
+        const index = fundSchema.findIndex(object => {
+            return object.data === 'Who we are';
+        });
+        fundSchema[index].data = "Who I am";
+    }
+    const isoCountries = {"Afghanistan":["AF","Asia"],"Albania":["AL","Europe"],"Algeria":["DZ","MENA"],"Andorra":["AD","Europe"],"Angola":["AO","Africa"],"Antigua and Barbuda":["AG","America"],"Argentina":["AR","America"],"Armenia":["AM","Europe"],"Australia":["AU","Oceania"],"Austria":["AT","Europe"],"Azerbaijan":["AZ","Asia"],"Bahamas":["BS","America"],"Bahrain":["BH","MENA"],"Bangladesh":["BD","Asia"],"Barbados":["BB","America"],"Belarus":["BY","Europe"],"Belgium":["BE","Europe"],"Belize":["BZ","America"],"Benin":["BJ","Africa"],"Bhutan":["BT","Asia"],"Bolivia":["BO","America"],"Bosnia-H":["BA","Europe"],"Botswana":["BW","Africa"],"Brazil":["BR","America"],"British Virgin Islands":["VG","America"],"Bulgaria":["BG","Europe"],"Burkina Faso":["BF","Africa"],"Burundi":["BI","Africa"],"Cabo Verde":["CV","Africa"],"Cambodia":["KH","Asia"],"Cameroon":["CM","Africa"],"Canada":["CA","America"],"Cayman Islands":["KY","America"],"Central African Republic":["CF","Africa"],"Chad":["TD","Africa"],"Chile":["CL","America"],"China":["CN","Asia"],"Colombia":["CO","America"],"Comoros":["KM","Africa"],"Congo (Congo-Brazzaville)":["CG","Africa"],"DRC Congo":["CD","Africa"],"Costa Rica":["CR","America"],"C\u00f4te d'Ivoire":["CI","Africa"],"Croatia":["HR","Europe"],"Cuba":["CU","America"],"Cyprus":["CY","Europe"],"Czech Republic":["CZ","Europe"],"Denmark":["DK","Europe"],"Djibouti":["DJ","MENA"],"Dominica":["DM","America"],"Dominican Republic":["DO","America"],"Ecuador":["EC","America"],"Egypt":["EG","MENA"],"El Salvador":["SV","America"],"Equatorial Guinea":["GQ","Africa"],"Eritrea":["ER","Africa"],"Estonia":["EE","Europe"],"Ethiopia":["ET","Africa"],"Fiji":["FJ","Oceania"],"Finland":["FI","Europe"],"France":["FR","Europe"],"Gabon":["GA","Africa"],"Gambia":["GM","Africa"],"Georgia":["GE","Europe"],"Germany":["DE","Europe"],"Ghana":["GH","Africa"],"Gibraltar":["GI","Europe"],"Greece":["GR","Europe"],"Grenada":["GD","America"],"Guatemala":["GT","America"],"Guinea":["GN","Africa"],"Guinea-Bissau":["GW","Africa"],"Guyana":["GY","America"],"Haiti":["HT","America"],"Holy See":["VA","Europe"],"Honduras":["HN","America"],"Hong Kong":["HK","Asia"],"Hungary":["HU","Europe"],"Iceland":["IS","Europe"],"India":["IN","Asia"],"Indonesia":["ID","Asia"],"Iran":["IR","MENA"],"Iraq":["IQ","MENA"],"Ireland":["IE","Europe"],"Israel":["IL","MENA"],"Italy":["IT","Europe"],"Jamaica":["JM","America"],"Japan":["JP","Asia"],"Jordan":["JO","MENA"],"Kazakhstan":["KZ","Asia"],"Kenya":["KE","Africa"],"Kiribati":["KI","Oceania"],"Kuwait":["KW","MENA"],"Kyrgyzstan":["KG","Asia"],"Laos":["LA","Asia"],"Latvia":["LV","Europe"],"Lebanon":["LB","MENA"],"Lesotho":["LS","Africa"],"Liberia":["LR","Africa"],"Lybia":["LY","MENA"],"Liechtenstein":["LI","Europe"],"Lithuania":["LT","Europe"],"Luxembourg":["LU","Europe"],"Madagascar":["MG","Africa"],"Malawi":["MW","Africa"],"Malaysia":["MY","Asia"],"Maldives":["MV","Asia"],"Mali":["ML","Africa"],"Malta":["MT","Europe"],"Marshall Islands":["MH","Oceania"],"Mauritania":["MR","MENA"],"Mauritius":["MU","Africa"],"Mexico":["MX","America"],"Micronesia":["FM","Oceania"],"Moldova":["MD","Europe"],"Monaco":["MC","Europe"],"Mongolia":["MN","Asia"],"Montenegro":["ME","Europe"],"Morocco":["MA","MENA"],"Mozambique":["MZ","Africa"],"Myanmar":["MM","Asia"],"Namibia":["NA","Africa"],"Nepal":["NP","Asia"],"Netherlands":["NL","Europe"],"New Zealand":["NZ","Oceania"],"Nicaragua":["NI","America"],"Niger":["NE","Africa"],"Nigeria":["NG","Africa"],"North Macedonia":["MK","Europe"],"Norway":["NO","Europe"],"Oman":["OM","MENA"],"Pakistan":["PK","Asia"],"Palau":["PW","Oceania"],"Palestine":["PS","MENA"],"Panama":["PA","America"],"Papua New Guinea":["PG","Oceania"],"Paraguay":["PY","America"],"Peru":["PE","America"],"Philippines":["PH","Asia"],"Poland":["PL","Europe"],"Portugal":["PT","Europe"],"Qatar":["QA","MENA"],"Romania":["RO","Europe"],"Russia":["RU","Europe"],"Rwanda":["RW","Africa"],"Sant Kitts and Nevis":["KN","America"],"Sant Lucia":["LC","America"],"Saint Vincent and the Grenadines":["VC","America"],"Samoa":["WS","Oceania"],"San Marino":["SM","Europe"],"Sao Tome and Principe":["ST","Africa"],"Saudi Arabia":["SA","MENA"],"Senegal":["SN","Africa"],"Serbia":["RS","Europe"],"Seychelles":["SC","Africa"],"Sierra Leone":["SL","Africa"],"Singapore":["SG","Asia"],"Slovakia":["SK","Europe"],"Slovenia":["SI","Europe"],"Solomon Islands":["SB","Oceania"],"Somalia":["SO","Africa"],"South Africa":["ZA","Africa"],"South Korea":["KR","Asia"],"Spain":["ES","Europe"],"Sri Lanka":["LK","Asia"],"Sudan":["SD","MENA"],"Suriname":["SR","America"],"Sweden":["SE","Europe"],"Switzerland":["CH","Europe"],"Syria":["SY","MENA"],"Taiwan":["TW","Asia"],"Tajikistan":["TJ","Asia"],"Tanzania":["TZ","Africa"],"Thailand":["TH","Asia"],"Timor-Leste":["TL","Asia"],"Togo":["TG","Africa"],"Tonga":["TO","Oceania"],"Trinidad and Tobago":["TT","America"],"Tunisia":["TN","MENA"],"Turkey":["TR","MENA"],"Turkmenistan":["TM","Asia"],"Tuvalu":["TV","Oceania"],"UAE":["AE","MENA"],"UK":["GB","Europe"],"USA":["US","America"],"Uganda":["UG","Africa"],"Ukraine":["UA","Europe"],"Uruguay":["UY","America"],"Uzbekistan":["UZ","Asia"],"Vanuatu":["VU","Oceania"],"Venezuela":["VE","America"],"Vietnam":["VN","Asia"],"Yemen":["YE","MENA"],"Zambia":["ZM","Africa"],"Zimbabwe":["ZW","Africa"]};
+    const originalData = $('#fundBodx').html();
+    //SELECTS
+    function populateCountries(val){
+        const continent= ['Africa', 'America', 'Asia' , 'Europe', 'MENA', 'Oceania'] ;
+        var ori = [];
+        var str= '';
+        //console.log(val)
+        $(val).find('span').each(function () {
+            ori.push(this.innerText.trim());
+        });
+        continent.forEach(function(c){
+            str+=`<optgroup label=${c}>`;
+                Object.keys(isoCountries).forEach(function (key){
+                    if(c==isoCountries[key][1]){
+                        var selected = false;
+                        ori.forEach(function(o){
+                            if(o==key){
+                                selected = true
+                            }
+                        });
+                        if(selected)
+                            str += `<option selected value="${key}">${key}</option>`
+                        else str += `<option value="${key}">${key}</option>`
+                    }
+                })
+            str+=`</optgroup>`;
+        });
+        $(val).html(`<select name="Countries of investment" multiple class="active form-control form-control-sm">${str}</select>`)
+            $(val).children('select').multiselect({
+                maxHeight: 200,
+                showSelectedValues : true,
+                enableHTML: true,
+                enableClickableOptGroups : false,
+                enableCollapsibleOptGroups: true,
+                collapseOptGroupsByDefault: true,
+                enableFiltering: true,
+                includeFilterClearBtn: false,
+                enableCaseInsensitiveFiltering: true,
+                buttonClass: 'btn btn-default active',
+                templates : {
+                    optionGroup: '<a class="multiselect-item multiselect-group"></a>'
+                },
+                numberDisplayed : 3
+        });
+    }
+    function populateSelect(name,val,opt,ori,multiselect,multiOri,enableFilter){
+        var str = '';
+        if(multiOri){
+            ori = [];
+            $(val).children('span').each(function () {
+                        ori.push(this.innerText.trim());
+            });
+        }
+        if(ori==''&&!multiOri) str = '<option selected value=""></option>';
+        opt.forEach(function(e){
+                        if(multiOri){
+                            var selected = false;
+                            ori.forEach(function(o){
+                                if(o==e){
+                                    selected = true
+                                }
+                            });
+                            if(selected)
+                                str += `<option selected value="${e}">${e}</option>`
+                            else str += `<option value="${e}">${e}</option>`
+                        }
+                        else if(ori==e)
+                            str += `<option selected value="${e}">${e}</option>`
+                        else str += `<option value="${e}">${e}</option>`
+        })
+        if(multiselect){
+            $(val).html(`<select name="${name}" multiple class="active form-control form-control-sm">${str}</select>`)
+            $(val).children('select').multiselect({
+                maxHeight: 200,
+                enableHTML: true,
+                enableFiltering: enableFilter ? true : false,
+                includeFilterClearBtn: false,
+                enableCaseInsensitiveFiltering: enableFilter ? true : false,
+                //nonSelectedText: ,
+                buttonClass: 'btn btn-default active',
+                numberDisplayed : 3
+            });
+        }
+        else $(val).html(`<select name="${name}" class="form-control form-control-sm">${str}</select>`)
+
+    }
+    //EDIT BTN
+    function init_editMode(){
+        //INIT
+        document.getElementById('fundBodx').scrollTop = 0;
+        $("#overview").animate({
+        scrollTop: 0
+        }, 500);
+        $('#socialIcons a').addClass('d-none')
+        $('#fundAlert').removeClass('d-none')
+        $('#teamCont').addClass('d-none')
+        $('li.teamElem').addClass('d-none')
+        $('#editFundBtn').prop('disabled',true)
+        $('#confirmChangesBtn').prop('disabled',false)
+        $('#confirmChangesBtn').removeClass('d-none')
+        $('#submitDeckBtn, .warmBtn').prop('disabled',true)
+        $('#submitDeckBtn, .warmBtn').addClass('d-none')
+        $('#editFundBtn').addClass('d-none')
+        $('#cancelChangesBtn').removeClass('d-none')
+        $('.settingsElem').removeClass('d-none')
+        //Map
+        if(typeof fundmap !== "undefined"){
+            fundmap.off();
+            fundmap.remove();
+        }
+        //Populate inputs
+        $('#fundCont table.fundDetail:not(.teamDetail) tr, #socialTable tr').each(function() {
+            const attr = $( this ).children('td')[0];
+            var val = $( this ).children('td')[1];
+            var ori = val.innerText;
+            if (ori == 'N/A') ori='';
+            switch(attr.innerText){
+                //investor type
+                case 'Firm type' :
+                    populateSelect(attr.innerText,val, investor_types,ori);
+                    break;
+                case 'Application periodicity' :
+                    populateSelect(attr.innerText,val,["In batches","All year round"], ori)
+                    break;
+                case 'How to get in touch' :
+                                                populateSelect(attr.innerText,val, ['Email address','Intro preferred','Online form'],ori);
+                                            break;
+                case 'Who we are':
+                    $(attr).html(attr.innerText+'<i data-toggle="tooltip" title="Introduce your firm\'s vision and some key facts." class="ml-1 cursor-pointer fas fa-info-circle"></i>')
+                    $(val).html('<textarea name="'+attr.innerText+'" rows="4" maxlength="350" class="mb-2 form-control form-control-sm">'+ori+'</textarea>')
+                    $('textarea[name="'+attr.innerText+'"]').maxlength({
+                        alwaysShow: true,
+                        appendToParent: true
+                    });
+                    break;
+                case 'Funding requirements':
+                    if(isRBF)
+                        $(attr).html(attr.innerText+'<i data-toggle="tooltip" title="Be specific about what you invest in: markets, technologies, business models, any other criteria. Must start with \'We finance\'." class="ml-1 cursor-pointer fas fa-info-circle"></i>')
+                    else if(isAngel)
+                        $(attr).html(attr.innerText+'<i data-toggle="tooltip" title="Be specific about what you invest in: markets, technologies, business models, any other criteria. Must start with \'I invest in\'." class="ml-1 cursor-pointer fas fa-info-circle"></i>')
+                    else
+                        $(attr).html(attr.innerText+'<i data-toggle="tooltip" title="Be specific about what you invest in: markets, technologies, business models, any other criteria. Must start with \'We invest in\'." class="ml-1 cursor-pointer fas fa-info-circle"></i>')
+                    $(val).html('<textarea name="'+attr.innerText+'" rows="4" maxlength="350" class="mb-2 form-control form-control-sm">'+ori+'</textarea>')
+                    $('textarea[name="'+attr.innerText+'"]').maxlength({
+                        alwaysShow: true,
+                        appendToParent: true
+                    });
+                    break;
+                case 'Value add':
+                    $(attr).html(attr.innerText+'<i data-toggle="tooltip" title="Be specific about how you help your portfolio companies: sales, recruiting, advice, etc." class="ml-1 cursor-pointer fas fa-info-circle"></i>')
+                    $(val).html('<textarea name="'+attr.innerText+'" rows="4" maxlength="350" class="mb-2 form-control form-control-sm">'+ori+'</textarea>')
+                    $('textarea[name="'+attr.innerText+'"]').maxlength({
+                        alwaysShow: true,
+                        appendToParent: true
+                    });
+                    break;
+                case 'Global HQ':
+                    $(attr).html(attr.innerText+'<i data-toggle="tooltip" title="Fill in a complete postal address to appear on the VC map" class="ml-1 cursor-pointer fas fa-info-circle"></i>')
+                    let pp = $(val).find('p:eq(0)').html();
+                    if(typeof pp=="undefined") pp="";
+                    $(val).html('<input type="text" name="'+attr.innerText+'" class="form-control form-control-sm" value="'+pp+'">')
+                    break;
+                //stages of investment
+                case 'Funding stages' :
+                    populateSelect(attr.innerText,val,stage_list,ori,true,true);
+                    break;
+                case 'Lead' :
+                    populateSelect(attr.innerText,val,["Always","Sometimes","Never"], ori)
+                    break;
+                case 'Default email or URL to receive deal flow' :
+                    $(val).html('<input type="text" name="Contact email" class="form-control form-control-sm" value="'+ori+'">')
+                    break;
+                case 'Target countries' :
+                    populateCountries(val);
+                    break;
+                case 'CRM' :
+                    populateSelect(attr.innerText,val,crm_list,ori,false,false,false);
+                    break;
+                case 'Check size' :
+                    let min = $(attr).attr('data-min') ? $(attr).attr('data-min') : 0
+                    let max = $(attr).attr('data-max') ? $(attr).attr('data-max') : 21000000
+                    let str = `<input disabled onclick="event.stopPropagation();" id="editCheq" class="form-control"
+                            data-slider-ticks="[0,1000,5000,10000,25000,50000,100000,200000,300000,400000,500000,600000,700000,800000,900000,1000000,2000000,3000000,4000000,5000000,6000000,7000000,8000000,9000000,10000000,12000000,14000000,16000000,18000000,20000000,21000000]"
+                            data-slider-id='ex2Slider' type="text" data-slider-value="[${min},${max}]"/><p class="mt-2" id="preCheq"></p>`
+                    $(val).html(str);
+                    $('#editCheq').slider({
+                        min: 0,
+                        max: 21000000,
+                        lock_to_ticks : true,
+                        ticks_positions : [0,3,6,9,12,15,20,23,26,29,32,35,38,42,45,50,53,56,59,62,65,68,71,74,77,80,83,86,89,96,100],
+                        tooltip_position: 'top',
+                        formatter: function(value) {
+                            return updateCheq(value);
+                        }
+                    });
+                    $("#editCheq").on("change", function(slideEvt) {
+                        $("#preCheq").text(updateCheq(slideEvt.value.newValue));
+                    });
+                    let n = $('#editCheq').slider('getValue')
+                    $("#preCheq").text(updateCheq(n));
+                    break;
+                default:
+                    $(val).html('<input type="text" name="'+attr.innerText+'" class="form-control form-control-sm" value="'+ori+'">')
+            }
+            let l = fundSchema.findIndex((fund => fund.data == attr.innerText));
+            //console.log(attr.innerText, ori)
+            fundSchema[l].status = true;
+        });
+        function updateCheq(value){
+            if((value[0] === 0 && value[1] > 20000000) || (value[0] === 0 && value[1] === 0) || (value[1] > 20000000 && value[0] > 20000000)){
+                return "N/A — Slide handles to specify";
+            }
+            else if(value[0] === 0 ){
+                let r =" max. $" + nFormatter(value[1], 2);
+                return r
+            }
+            else if(value[1] > 20000000){
+                let r = " min. $" + nFormatter(value[0], 2);
+                return r
+            }
+            else{
+                let r = "$"+nFormatter(value[0], 2) + " to $" + nFormatter(value[1], 2);
+                return r
+            }
+        }
+        // PORTFOLIO
+        function createPortfolioElement(url,img,name,key,add,id){
+            if(!id) id = 0;
+            if(!name) name = 0;
+            if(!img) img = 0;
+            if(!url) url = 0;
+                portfolioStr += `
+                <div class="card portElem">
+                    <div class="card-header" id="portHead${key}">
+                        <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#portCollapse${key}" aria-expanded="true" aria-controls="portCollapse${key}">
+                                <i class="fas fa-edit mr-1"></i> ${name}
+                                </button>
+                        </h2>
+                    </div>
+                    <div id="portCollapse${key}" class="collapse" aria-labelledby="portHead${key}" data-parent="#portfolioAccordeon">
+                        <div class="card-body">
+                            <p><button onclick="$(this).closest('.card').remove()" class="btn btn-default"><i class="fas fa-trash-alt"></i> Remove from portfolio</button></p>
+                            <p><input type="hidden" value="${id}" data-port="portfolioID" class="form-control form-control-sm"/></p>
+                            <p><input type="hidden" value="${url}" data-port="portfolioURL" class="form-control form-control-sm"/></p>
+                            <p><input type="hidden" value="${name}" data-port="portfolioName" class="form-control form-control-sm"/></p>
+                        </div>
+                    </div>
+                </div>
+                `
+            if(add){
+                $('#portfolioAccordeon').append(portfolioStr);
+            }
+        }
+        var portfolioStr = `
+            <div class="accordion" id="portfolioAccordeon">
+            <div class="card mb-5">
+                <div class="card-header" id="portHead">
+                    <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#portCollapse" aria-expanded="true" aria-controls="portCollapse">
+                            <i class="fas fa-plus mr-1"></i> Add company to portfolio
+                            </button>
+                    </h2>
+                </div>
+                <div id="portCollapse" class="collapse" aria-labelledby="portHead" data-parent="#portfolioAccordeon">
+                    <div class="card-body">
+                        <p>Add a portfolio company by searching below</p>
+                        <p><input type="text" id="startupName" placeholder="Company name" class="form-control form-control-sm"/></p>
+                        <div id="portfolioConfirm" class="d-none">Do you want to add this company to your portfolio ?
+                            <div class="my-2"></div>
+                            <button id="addExistingPortfolio" class="btn btn-success"><i class="fas fa-plus mr-1"></i> Yes</button>
+                            <button id="cancelExistingPortfolio" class="btn btn-danger"><i class="fas fa-times mr-1"></i> No</button>
+                        </div>
+                        <p><button id="newPortfolio" class="btn btn-primary"><i class="fas fa-plus mr-1"></i> My portfolio company is not on the list</button></p>
+                        <p><input type="text" id="newCompany" placeholder="Company name" class="d-none form-control form-control-sm"/></p>
+                        <p><input type="text" id="websiteURL" placeholder="Website URL" class="d-none form-control form-control-sm"/></p>
+                        <p><button id="addToPortfolioBtn" class="btn btn-success d-none"><i class="fas fa-check mr-1"></i> Confirm</button></p>
+                    </div>
+                </div>
+            </div>
+        `;
+        $('.portfolioElement').each(function(key, elem) {
+            let url = $(elem).attr('data-url');
+            let name = $(elem).attr('data-company');
+            let img = $(elem).attr('data-logo');
+            let id = $(elem).attr('data-id');
+            createPortfolioElement(url,img,name,key,false,id)
+        })
+        portfolioStr += '</div>';
+        $('#portfolioCont').html(portfolioStr);
+        //get porfolio autocomplete
+        var portfolio_url = "serverside/portfolioList.php";            $.ajax({
+            type: 'get',
+            url: portfolio_url,
+            complete: function (data) {
+                resp = JSON.parse(data.responseText);
+                if (typeof autoCompleteJS == "undefined"){
+                    //console.log(resp)
+                    const autoCompleteJS = new autoComplete({
+                        selector: "#startupName",
+                        placeHolder: "Search for a company",
+                        data: {
+                            src: resp,
+                            cache: true,
+                            keys: ['name']
+                        },
+                        resultItem: {
+                            highlight: true
+                        },
+                        events: {
+                            input: {
+                                selection: (event) => {
+                                    const selection = event.detail.selection.value;
+                                    autoCompleteJS.input.value = selection.name;
+                                    str = "<p id='confirmPortfolio'>";
+                                    $('#portfolioConfirm').removeClass('d-none');
+                                    $('#portfolioConfirm > div').html(`<img width="36px" src="${selection.logo}"> ${selection.name}`);
+                                    $('#cancelExistingPortfolio').on('click', function (e) {
+                                        $('#portfolioConfirm > div').html('');
+                                        $('#portfolioConfirm').addClass('d-none');
+                                    });
+                                    $('#addExistingPortfolio').unbind().on('click', function (e) {
+                                        portfolioStr='';
+                                        let ids = $('[data-port="portfolioID"]').map(function() {
+                                            return $(this).val();
+                                        }).get();
+                                        //console.log(ids)
+                                        if (ids.includes(selection.id)){
+                                            alert("This company is already in this fund's portfolio");
+                                            return;
+                                        }
+                                        else {
+                                            $('#startupName').val('');
+                                            $('#portfolioConfirm').addClass('d-none');
+                                            createPortfolioElement(null,selection.logo,selection.name,selection.id,true,selection.id)
+                                        }
+                                    });
+                                }
+                            }
+                        },
+                        resultsList: {
+                            element: (list, data) => {
+                                if (!data.results.length) {
+                                    const message = document.createElement("div");
+                                    message.setAttribute("class", "no_result");
+                                    message.innerHTML = `<span>Found No Results for "${data.query}"</span>`;
+                                    list.appendChild(message);
+                                }
+                            },
+                            noResults: true,
+                        }
+                    });
+
+                }
+            }
+        });
+        $('#newPortfolio').on('click', function (e) {
+            $('#websiteURL').removeClass('d-none');
+            $('#newCompany').removeClass('d-none');
+            $('#logoURL').removeClass('d-none');
+            $('#addToPortfolioBtn').removeClass('d-none');
+        })
+        $('#addToPortfolioBtn').on('click', function (e) {
+            let url = $('#websiteURL').val();
+            let name = $('#newCompany').val();
+            let regex = new RegExp(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi);
+            if(url == ''||name==''){
+                alert('Some fields are empty. Please check Website URL, Company Name and Company Logo fields.')
+                return
+            }
+            if(!url.match(regex)){
+                alert('Website URL is invalid (must start with http or https)')
+                return
+            }
+            let key = $('#portfolioAccordeon > .card').length;
+            portfolioStr = '';
+            createPortfolioElement(url,null,name,key,true)
+            $('#websiteURL').addClass('d-none');
+            $('#newCompany').addClass('d-none');
+            $('#logoURL').addClass('d-none');
+            $('#websiteURL').val('');
+            $('#newCompany').val('');
+            $('#logoURL').val('');
+            $('#addToPortfolioBtn').addClass('d-none');
+            $('#portCollapse').collapse('hide')
+        })
+        $('#fundBody table tr.d-none').removeClass('d-none')
+        $('[data-toggle="tooltip"]').tooltip()
+    }//end init_editmode
+    //EDIT BTN
+    $('#editFundBtn').on('click', function (e) {
+
+    })
+    //CANCEL CHANGES BTN
+    $('#cancelChangesBtn').on('click', function (e) {
+        if(!confirm("You are about to leave the edit mode and discard all changes made. Are you sure ?")) return false;
+        $('#fundAlert').addClass('d-none');
+        $('#editFundBtn').removeClass('d-none');
+        $('#socialIcons a').removeClass('d-none');
+        $('#teamCont').removeClass('d-none');
+        $('li.teamElem').removeClass('d-none');
+        $('#editFundBtn').prop('disabled',false);
+        $('#submitDeckBtn, .warmBtn').removeClass('d-none');
+        $('#cancelChangesBtn').addClass('d-none');
+        $('#confirmChangesBtn').prop('disabled',true);
+        $('#submitDeckBtn, .warmBtn').prop('disabled',false);
+        $('#confirmChangesBtn').addClass('d-none')
+        $('.settingsElem').addClass('d-none');
+        $('#fundBodx').html(originalData);
+        initMap();
+    })
+    //CONFIRM CHANGES BTN
+    $('#confirmChangesBtn').on('click', function (e) {
+        document.getElementById('fundBodx').scrollTop = 0;
+        if($('[name="Funding requirements"]').val().trim().length==0){
+                alert('Please specify your investment thesis in the "Funding requirements" field.');
+                return false;
+        }
+        if(typeof $('[name="Who we are"]')[0] != "undefined"){
+            if($('[name="Who we are"]').val().length > 350){
+                alert('"Who we are" field must not be more than 350 characters long');
+                return false;
+            }
+        }
+        else if(typeof $('[name="Who I am"]')[0] != "undefined"){
+            if($('[name="Who I am"]').val().length > 350){
+                alert('"Who I am" field must not be more than 350 characters long');
+                return false;
+            }
+        }
+        if($('[name="Value add"]').val().length > 350){
+            alert('"Value add" field must not be more than 350 characters long');
+            return false;
+        }
+        if($('[name="Twitter"]').val().length>0 && !$('[name="Twitter"]').val().startsWith('@')){
+            alert('"Twitter" handle must start with "@" (e.g. @yourFund)');
+            return false;
+        }
+        if(isRBF){
+            if($('[name="Funding requirements"]').val().length>0 && !$('[name="Funding requirements"]').val().startsWith('We finance')){
+                alert('"Funding requirements" field must start with "We finance"');
+                return false;
+            }
+        }
+        else if(isAngel){
+            if($('[name="Funding requirements"]').val().length>0 && !$('[name="Funding requirements"]').val().startsWith('I invest in')){
+                alert('"Funding requirements" field must start with "I invest in"');
+                return false;
+            }
+        }
+        else if(!isAccel){
+            if($('[name="Funding requirements"]').val().length>0 && !$('[name="Funding requirements"]').val().startsWith('We invest in')){
+                alert('"Funding requirements" field must start with "We invest in"');
+                return false;
+            }
+        }
+        if($('[name="Linkedin"]').val().length>0){
+            if(!$('[name="Linkedin"]').val().startsWith('https://www.linkedin.com/')&&!$('[name="Linkedin"]').val().startsWith('http://www.linkedin.com/')){
+                alert('"LinkedIn" must be a valid LinkedIn URL starting with https://www.linkedin.com/');
+                return false;
+            }
+        }
+        if($('[name="Linkedin"]').val().length>0){
+            if(!$('[name="Linkedin"]').val().startsWith('https://www.linkedin.com/')&&!$('[name="Linkedin"]').val().startsWith('http://www.linkedin.com/')){
+                alert('"LinkedIn" must be a valid LinkedIn URL starting with https://www.linkedin.com/');
+                return false;
+            }
+        }
+        const isValidUrl = urlString=> {
+            try {
+                return Boolean(new URL(urlString));
+            }
+            catch(e){
+                return false;
+            }
+        }
+        if($('[name="Website"]').val().length>0){
+            if(!isValidUrl($('[name="Website"]').val())){
+                alert('The Website URL must be a valid absolute URL e.g. https://www.openvc.app/');
+                return false;
+            }
+        }
+        $('#changesWindow .btn-success').prop('disabled',false);
+        $('#changesSuccess').addClass('d-none');
+        $('#changesSuccess').html('');
+        $('#changesError').addClass('d-none');
+        $('#changesError').html('');
+        $('#changesWindow').removeClass('d-none');
+        document.getElementById("changesWindow").scrollIntoView({ behavior: 'smooth' });
+        try{grecaptcha.reset()}
+        catch{null}
+        let theme = $('body').hasClass('darkTheme') ? 'dark' : 'light'
+        try{
+            submitCaptcha2 = grecaptcha.render('recaptcha2', {
+                'sitekey' : '6Lf1uoQaAAAAAKxByW26frHqUiQexdOdWV9Lp3yr',
+                'theme' : theme,
+                'callback' : 'recaptchaCallback2'
+            });
+        }
+        catch{null}
+    });
+    //VALIDATE CONFIRM CHANGES BTN
+    $('#changesWindow .btn-success').on('click', function (e) {
+        $('#changesWindow .btn-success').prop('disabled',true)
+        $('#changesSuccess').addClass('d-none');
+        $('#changesSuccess').html('');
+        $('#changesError').addClass('d-none');
+        $('#changesError').html('');
+        let captcha = grecaptcha.getResponse(
+            submitCaptcha2
+        )
+        if(!captcha){
+            $('#captchaError2').removeClass('d-none');
+            return;
+        }
+        var resp = {
+            "Investor name" : "Brickyard",
+            "id":"recBS0dXE2yAcpfCl",                "Verified" : true,
+            "First cheque minimum" : $('#editCheq').slider('getValue')[0] !== 0 ? $('#editCheq').slider('getValue')[0] :  null,
+            "First cheque maximum" : $('#editCheq').slider('getValue')[1] !== 21000000 ? $('#editCheq').slider('getValue')[1] : null,
+            "Verification email" : $('#emailWindow input').val()            };
+        //replacing display values by database values
+        $('#fundBodx [name]').each(function() {
+             let value = $(this).val();
+             let key = $(this).attr('name')
+             if(isAccel && key=='Typical terms') key='Typical fee'
+             if(isAccel && key=='Next deadline to apply') key = 'Application deadline'
+             if(isAngel && key=='Who I am') key='Who we are'
+             if(key=='Funding stages') key = 'Stage of investment'
+             if(key=='Firm type') key = 'Investor type'
+             if(key=='Funding requirements') key = 'Investment thesis'
+             if(value!='')
+                resp[key] = value;
+             else
+                resp[key] = null;
+        })
+        var portElem = $('.portElem').map(function() {
+                if($(this).find('[data-port="portfolioID"]').val() !== "0"){
+                    return {
+                        id : $(this).find('[data-port="portfolioID"]').val()
+                    }
+                }
+                else{
+                    return {
+                        url : $(this).find('[data-port="portfolioURL"]').val(),
+                        img : $(this).find('[data-port="portfolioIMG"]').val(),
+                        name : $(this).find('[data-port="portfolioName"]').val()
+                    }
+                }
+        }).get();
+        var url = "serverside/editFund.php";            $('#changesWindow .spinner-border').removeClass('d-none');
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: {"data" : JSON.stringify(resp), "token" : captcha, "data2" : JSON.stringify(portElem)},
+            complete: function (data) {
+                $('#changesSuccess').addClass('d-none');
+                $('#changesSuccess').html('');
+                $('#changesError').addClass('d-none');
+                $('#changesError').html('');
+                resp = JSON.parse(data.responseText);
+                if(resp.response == "success"){
+                    $('#VCmodal .modal-header').html('<button type="button" style="position:absolute;right:0.5em;top:0.5em;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>');
+                    $('#VCmodal .modal-footer').html('');
+                    $('#VCmodal .modal-body').html('<div class="p-5 modal-body text-center"><div class="mt-4">'+resp.message+'</div></div>');
+                    /*$('#changesSuccess').removeClass('d-none');
+                    $('#changesSuccess').html(resp.message);*/
+                    //GTM DL PUSH
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                    'event': 'edit_fund',
+                    'name' : 'Brickyard'
+                    });
+                }
+                else if(resp.response == "error"){
+                    $('#changesError').removeClass('d-none');
+                    $('#changesError').html(resp.message);
+                }
+                $('#changesWindow .spinner-border').addClass('d-none');
+            }
+        });
+    });
+    initMap();
+        })
+document.addEventListener("login_success", () => {
+    window.location.replace(location.href);
+    return
+});
+</script>
+
+</html>
