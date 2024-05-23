@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "workspaces": ["apps/*", "packages/*"],
   "scripts": {
+    "web:dev": "cd apps/web && bun run dev",
     "web:build": "cd apps/web && bun run build",
     "web:start": "cd apps/web && bun run start",
     "populate": "bun scripts/populate/populate.ts",
