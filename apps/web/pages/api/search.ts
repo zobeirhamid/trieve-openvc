@@ -30,6 +30,6 @@ export default async function handler(
       }
     } catch (e) { 
       console.log(e)
+      res.status(404).json(null)
     }
-    res.status(404).json(null)
 }
