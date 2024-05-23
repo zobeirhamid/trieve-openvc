@@ -1,5 +1,4 @@
 import { load } from 'cheerio'
-import path from 'path'
 import { sleep } from 'bun'
 import { VentureCapitalistSchema, type TrieveChunk, type VentureCapitalist  } from "@trieve-openvc/schemas"
 
@@ -29,7 +28,7 @@ export function extractVCLinks(html: string): string[] {
     const $ = load(html)
     $('.VClink').each((index, anchor) => {
         const rawLink = $(anchor).attr('href')
-        if (rawLink) links[index] = path.join('https://www.openvc.app/', rawLink)
+        if (rawLink) links[index] = new URL(rawLink, 'https://www.openvc.app/').href
     })
     return links.filter((link, index) => links.indexOf(link) === index)
 }
@@ -53,7 +52,7 @@ export function extractVC(html: string): VentureCapitalist {
     const vc: VentureCapitalist = { name }
 
     const rawLogo = $('#fundHeader img').attr('src')
-    if (rawLogo) vc['logo'] = path.join('https://www.openvc.app/', rawLogo)
+    if (rawLogo) vc['logo'] = new URL(rawLogo, 'https://www.openvc.app/').href
 
     const tables = $('.fundDetail')
     tables.each((tableIndex, table) => {
@@ -91,6 +90,7 @@ export function extractVC(html: string): VentureCapitalist {
 export async function scrapeTrieveChunks(links: string[]) {
     const chunks: TrieveChunk[] = []
     for (const link of links) {
+        console.log(link)
         const html = await fetchOpenVCDetailHTML(link)
         if (html) {
             const vc = extractVC(html)
