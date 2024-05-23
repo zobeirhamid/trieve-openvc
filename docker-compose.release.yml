@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  web:
+    extends:
+      file: docker-compose.yml
+      service: web
+    image: zobeirhamid0708/trieve-openvc:latest
+    platform: linux/amd64

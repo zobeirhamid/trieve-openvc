@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  web:
+    extends:
+      file: docker-compose.yml
+      service: web
+    platform: linux/arm64
+    env_file:
+      - apps/web/.env
+    ports:
+      - 3000:3000
