@@ -9,7 +9,7 @@
 1. [Create a Trieve account and a dataset](https://trieve.ai/)
 2. There are two `.env-example` files, one is located at the `/` and the other at `apps/web`. Rename them to `.env` and populate them with your Trieve data.
 3. Install dependencies via `bun install`.
-4. Populate your Trieve dataset via `bun run populate`.
+4. Populate your Trieve dataset via `bun run populate`. This takes a while.
 5. Run `bun run web:dev`.
 
 ## Deployment
