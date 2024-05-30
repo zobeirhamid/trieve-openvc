@@ -1,8 +1,11 @@
 import { load } from 'cheerio'
 import { sleep } from 'bun'
 import { VentureCapitalistSchema, type TrieveChunk, type VentureCapitalist  } from "@trieve-openvc/schemas"
+import fs from 'fs'
+import path from 'path'
 
 const headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36' }
+const cacheDir = './cache'
 
 export async function fetchOpenVCHTML() {
     const response = await fetch('https://www.openvc.app/search', { headers })
@@ -10,6 +13,8 @@ export async function fetchOpenVCHTML() {
 }
 
 export async function fetchOpenVCDetailHTML(link: string, retry = 5) {
+    const cache = path.join(cacheDir, link.split('/').pop()!)
+    if (fs.existsSync(cache)) return fs.readFileSync(cache, 'utf-8').toString()
     const response = await fetch(link, { headers })
     const html = await response.text()
     if (html.includes('<title>Just a moment...</title>')) {
@@ -20,6 +25,7 @@ export async function fetchOpenVCDetailHTML(link: string, retry = 5) {
 
         return ''
     }
+    fs.writeFileSync(cache, html)
     return html
 }
 
@@ -73,7 +79,7 @@ export function extractVC(html: string): VentureCapitalist {
                 }
             
             })
-            if (pair.key && pair.key in openVCMap) {
+            if (pair.key && pair.key in openVCMap && pair.value && pair.value !== 'N/A') {
                 vc[openVCMap[pair.key][0]] = openVCMap[pair.key][1](pair.value)
             }
         })
@@ -97,10 +103,11 @@ export async function scrapeTrieveChunks(links: string[]) {
             if(VentureCapitalistSchema.safeParse(vc).success) {
                 let chunkHTML = ''
                 if (vc.name) chunkHTML += `<h1>${vc.name}</h1>`
-                if (vc.description) chunkHTML += `<p>${vc.description}</p>`
-                if (vc.address) chunkHTML += `<p>Located in ${vc.address}</p>`
-                if (vc.check) chunkHTML += `<p>Invests ${vc.check}</p>`
-                if (vc.countries) chunkHTML += `<p>Invest in ${vc.countries.join(', ')}</p>`
+                if (vc.description) chunkHTML += `<p>${vc.description}.</p>`
+                if (vc.thesis) chunkHTML += `<p>${vc.thesis}.</p>`
+                if (vc.address) chunkHTML += `<p>Located in ${vc.address}.</p>`
+                if (vc.check) chunkHTML += `<p>Check size is ${vc.check}.</p>`
+                if (vc.stages) chunkHTML += `<p>Invest in ${vc.stages.join(', ')}.</p>`
                 chunkHTML = `<div>${chunkHTML}</div>`
                 const tagSet: string[] = []
                 if (vc.stages) tagSet.push(...vc.stages)
@@ -119,7 +126,8 @@ export async function scrapeTrieveChunks(links: string[]) {
 
 
 if (import.meta.main) {
-    const MAX_CHUNKS = 1000
+    if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir);
+    const MAX_CHUNKS = Infinity
     const BULK_SIZE = 120
 
     const links = extractVCLinks(await fetchOpenVCHTML()).slice(0, MAX_CHUNKS)
