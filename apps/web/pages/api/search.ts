@@ -20,7 +20,7 @@ export default async function handler(
           },
           body: JSON.stringify({
             query,
-            search_type: 'hybrid',
+            search_type: 'fulltext',
             page: parseInt(page as string),
             slim_chunks: true,
           }),

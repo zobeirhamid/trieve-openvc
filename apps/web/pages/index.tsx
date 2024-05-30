@@ -6,7 +6,7 @@ import useSWR from "swr";
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 // I did not find a way to programmatically get the total number of chunks.
 // I checked the YC example and notice you implemented infinity scrolling to overcome this.
-const TOTAL_CHUNKS = 1000
+const TOTAL_CHUNKS = 5600
 const PAGE_SIZE = 10
 
 export default function IndexPage() {
